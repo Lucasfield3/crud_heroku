@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        TIO 6º Semestre
+    </title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body onload="readAxios()">
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div>
+                        <h1><strong>Lista de Compras</strong></h1>
+                    </div>
+                    <div>
+                        <label>Codigo ID</label><label class="validation-error hide" id="validacaoID">     *     ESTE CAMPO DEVE SER PREENCHIDO OBRIGATORIAMENTE.     *</label>
+                        <input type="text" name="id" id="id">
+                    </div>
+                    <div>
+                        <label>Produto</label>
+                        <input type="text" name="produto" id="produto">
+                    </div>
+                    <div>
+                        <label>Unidade Medida</label>
+                        <input type="text" name="uniMedida" id="uniMedida">
+                    </div>
+                    <div>
+                        <label>Quantidade</label>
+                        <input type="number" name="qtd" id="qtd">
+                    </div>
+                    <div>
+                        <label>Categoria</label>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <label class="input-group-text" for="categoria">Opções</label>
+                            </div>
+                            <select class="custom-select" id="categoria">
+                              <option selected>Sem Categoria</option>
+                              <option value="Produtos Alimenticios">Produtos Limpeza</option>
+                              <option value="Produtos Alimenticios">Produtos Alimenticios</option>
+                              <option value="Produtos Tecnologia">Produtos Tecnologia</option>
+                            </select>
+                          </div>
+
+                    </div>
+
+                    <div  class="form-action-buttons">
+                        <input class="btn btn-primary" type="submit" value="Enviar">
+                    </div>
+                </form>
+            </td>
+            <td>
+
+
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" id="busca-id"  type="search" placeholder="Pesquisar..." aria-label="Search" onclick="getComprasID()">
+                    <button class="btn btn-outline-dark my-2 my-sm-0" onclick="buscar()" type="submit">Buscar</button>
+                  </form>
+                  
+
+                <table class="list" id="listaDados">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Produto</th>
+                            <th>Unidade Medida</th>
+                            <th>Qtd</th>
+                            <th>Categoria</th>
+                        </tr>
+                        
+
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    
+<center>
+    <p>
+        <img src="dr.png"  width="500" height="300" aling="middle">
+    </p>
+    UniDrummond &copy; TIO 6º Semestre feito por Vitor Aguiar, Gabriel Fernandes, Lucas Rodrigues - Grupo 02
+</center>
+    
+
+    <script src="script.js"></script>
+</body>
+
+</html>
